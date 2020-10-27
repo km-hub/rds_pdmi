@@ -1,3 +1,8 @@
+provider "aws" {
+  region = "us-east-1"
+}
+
+
 locals {
   db_subnet_group_name          = var.db_subnet_group_name != "" ? var.db_subnet_group_name : module.db_subnet_group.this_db_subnet_group_id
   enable_create_db_subnet_group = var.db_subnet_group_name == "" ? var.create_db_subnet_group : false
