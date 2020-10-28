@@ -73,28 +73,21 @@ variable "domain_iam_role_name" {
 variable "engine" {
   description = "The database engine to use"
   type        = string
-
-  default = "Aurora MySQL"
 }
 
 variable "engine_version" {
   description = "The engine version to use"
   type        = string
-
-  default = "5.7.mysql_aurora.2.07.2"
 }
 
 variable "instance_class" {
   description = "The instance type of the RDS instance"
   type        = string
-
-  default = "db.r5.large"
 }
 
 variable "name" {
   description = "The DB name to create. If omitted, no database is created initially"
   type        = string
-  default     = "pdmirepricemysql"
 }
 
 variable "username" {
@@ -110,8 +103,6 @@ variable "password" {
 variable "port" {
   description = "The port on which the DB accepts connections"
   type        = string
-
-  default = "3306"
 }
 
 variable "final_snapshot_identifier" {
@@ -141,7 +132,6 @@ variable "parameter_group_name" {
 variable "availability_zone" {
   description = "The Availability Zone of the RDS instance"
   type        = string
-  default     = "us-east-1a"
 }
 
 variable "multi_az" {
