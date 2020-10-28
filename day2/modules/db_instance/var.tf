@@ -7,11 +7,15 @@ variable "create" {
 variable "identifier" {
   description = "The name of the RDS instance, if omitted, Terraform will assign a random, unique identifier"
   type        = string
+
+  default = "database-pdmi-mysql-dev"
 }
 
 variable "allocated_storage" {
   description = "The allocated storage in gigabytes"
   type        = string
+
+  default = "20"
 }
 
 variable "storage_type" {
@@ -71,36 +75,50 @@ variable "domain_iam_role_name" {
 variable "engine" {
   description = "The database engine to use"
   type        = string
+
+  default = "Aurora MySQL"
 }
 
 variable "engine_version" {
   description = "The engine version to use"
   type        = string
+
+  default = "2.07.2"
 }
 
 variable "instance_class" {
   description = "The instance type of the RDS instance"
   type        = string
+
+  default = "db.r5.large"
 }
 
 variable "name" {
   description = "The DB name to create. If omitted, no database is created initially"
   type        = string
+
+  default = "pdmirepricemysql"
 }
 
 variable "username" {
   description = "Username for the master DB user"
   type        = string
+
+  default = "admin"
 }
 
 variable "password" {
   description = "Password for the master DB user. Note that this may show up in logs, and it will be stored in the state file"
   type        = string
+
+  default = "example@123"
 }
 
 variable "port" {
   description = "The port on which the DB accepts connections"
   type        = string
+
+  default = "3306"
 }
 
 variable "final_snapshot_identifier" {
@@ -112,24 +130,26 @@ variable "final_snapshot_identifier" {
 variable "vpc_security_group_ids" {
   description = "List of VPC security groups to associate"
   type        = list(string)
-  default     = []
+  default     = ["RDS-dev (sg-03ac0ca8b45e5f695)"]
 }
 
 variable "db_subnet_group_name" {
   description = "Name of DB subnet group. DB instance will be created in the VPC associated with the DB subnet group. If unspecified, will be created in the default VPC"
   type        = string
-  default     = ""
+  default     = "default-vpc-05a3dd8d33687a282"
 }
 
 variable "parameter_group_name" {
   description = "Name of the DB parameter group to associate"
   type        = string
-  default     = ""
+  default     = "default.aurora-mysql5.7"
 }
 
 variable "availability_zone" {
   description = "The Availability Zone of the RDS instance"
   type        = string
+
+  default = "us-east-1a"
 }
 
 variable "multi_az" {
@@ -229,7 +249,7 @@ variable "tags" {
 variable "option_group_name" {
   description = "Name of the DB option group to associate."
   type        = string
-  default     = ""
+  default     = "default:aurora-mysql-5-7"
 }
 
 variable "timezone" {
