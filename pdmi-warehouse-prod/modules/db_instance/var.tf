@@ -33,7 +33,7 @@ variable "storage_encrypted" {
 variable "kms_key_id" {
   description = "The ARN for the KMS encryption key. If creating an encrypted replica, set this to the destination KMS ARN. If storage_encrypted is set to true and kms_key_id is not specified the default KMS key created in your account will be used"
   type        = string
-  default     = "aws/rds"
+  default     = "arn:aws:kms:us-east-1:603804338889:key/c11f2a9f-6e86-4c75-a502-0fd2713c3980"
 }
 
 variable "replicate_source_db" {
