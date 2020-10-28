@@ -7,8 +7,6 @@ variable "create" {
 variable "identifier" {
   description = "The name of the RDS instance, if omitted, Terraform will assign a random, unique identifier"
   type        = string
-
-  default = "database-pdmi-mysql-dev"
 }
 
 variable "allocated_storage" {
